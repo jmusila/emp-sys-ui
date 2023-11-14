@@ -15,5 +15,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = (new CreateUser())->fromData($request->validated())->execute();
+
+        return view("users", compact("user"));
     }
 }
